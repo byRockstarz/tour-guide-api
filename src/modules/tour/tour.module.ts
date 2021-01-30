@@ -4,6 +4,6 @@ import { TourService } from './tour.service';
 
 @Module({
   controllers: [TourController],
-  providers: [TourService]
+  providers: [TourService],
 })
 export class TourModule {}

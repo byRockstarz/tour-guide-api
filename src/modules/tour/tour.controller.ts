@@ -1,21 +1,19 @@
-import { Body, Controller, Get, Header, Param, Post, Query, Req, Res, UsePipes, ValidationPipe } from '@nestjs/common';
-import { query, Response } from 'express';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { CreateTourDto } from './dtos/create-tour.dto';
 import { TourService } from './tour.service';
 
 @Controller('tours')
 export class TourController {
-    constructor(private readonly tourService : TourService) { }
-    
-    @Get()
-    getTours(){
-        // res.redirect('http://www.google.com')
-        return this.tourService.getTours();
-    } 
+  constructor(private readonly tourService: TourService) {}
 
-    @Post()    
-    createTour( @Body() CreateTourDto : CreateTourDto){
+  @Get()
+  getTours() {
+    // res.redirect('http://www.google.com')
+    return this.tourService.getTours();
+  }
+
+  @Post()
+  createTour(@Body() CreateTourDto: CreateTourDto) {
     return CreateTourDto;
-    }
-
+  }
 }
