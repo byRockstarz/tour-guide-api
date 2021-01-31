@@ -8,12 +8,11 @@ export class TourController {
 
   @Get()
   getTours() {
-    // res.redirect('http://www.google.com')
     return this.tourService.getTours();
   }
 
   @Post()
-  createTour(@Body() CreateTourDto: CreateTourDto) {
-    return CreateTourDto;
+  createTour(@Body() createTourDto: CreateTourDto) {
+    return this.tourService.createTour(createTourDto);
   }
 }
